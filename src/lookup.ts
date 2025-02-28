@@ -33,5 +33,15 @@ const table: Record<string, [string, string, string]> = {
 
     ghb: ["https://github.com/search?q=", "https://github.com/", "GitHub"],
     amz: ["https://amazon.com/s?k=", "https://www.amazon.com/", "Amazon"],
+    wmt: [
+        "https://www.walmart.com/search?q=",
+        "https://www.walmart.com/",
+        "Walmart",
+    ],
+    itg: [
+        "https://www.instagram.com/explore/tags/",
+        "https://www.instagram.com/",
+        "Instagram",
+    ],
 };
 export default table;

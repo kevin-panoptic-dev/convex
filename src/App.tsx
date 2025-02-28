@@ -1,28 +1,41 @@
 import "./App.css";
-import { useState } from "react";
+import table from "./lookup";
+import { useEffect } from "react";
 
 function App() {
-    const handleClick = () => {
-        console.log("hello,world!");
-        alert("hello, world!");
-        setDisplayText("Something happens.");
-    };
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            const element = document.querySelector(
+                ".container"
+            ) as HTMLDivElement;
+            element.classList.add("active");
+        }, 10);
 
-    const [displayText, setDisplayText] = useState("First");
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
-        <>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <button onClick={handleClick}>{displayText}</button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
+        <div className="container">
+            <center>
+                <h1>All Shortcuts</h1>
+            </center>
+
+            <div className="lookup-list">
+                {Object.entries(table).map(([key, array]) => (
+                    <div key={key} className="lookup-item">
+                        <span className="lookup-key">{key.toUpperCase()}:</span>
+                        <a
+                            href={array[1]}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="lookup-link"
+                        >
+                            {array[2]}
+                        </a>
+                    </div>
+                ))}
             </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
-        </>
+        </div>
     );
 }
 

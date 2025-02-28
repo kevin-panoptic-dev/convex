@@ -1,7 +1,7 @@
 import table from "./lookup";
 
 function inTable(key: string, table: Record<string, [string, string, string]>) {
-    return Object.keys(table).includes(key);
+    return Object.keys(table).includes(key.toLowerCase());
 }
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {

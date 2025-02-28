@@ -30,5 +30,8 @@ const table: Record<string, [string, string, string]> = {
         "https://en.wikipedia.org/wiki/",
         "Wikipedia",
     ],
+
+    ghb: ["https://github.com/search?q=", "https://github.com/", "GitHub"],
+    amz: ["https://amazon.com/s?k=", "https://www.amazon.com/", "Amazon"],
 };
 export default table;

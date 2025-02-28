@@ -6,7 +6,7 @@ const table: Record<string, [string, string, string]> = {
         "Google Image",
     ],
     ytb: [
-        "https://www.google.com/search?q=",
+        "https://www.youtube.com/results?search_query=",
         "https://www.youtube.com/",
         "YouTube",
     ],
